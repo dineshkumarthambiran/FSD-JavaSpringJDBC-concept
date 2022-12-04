@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: DEPARTMENTSERVICE
+        uri: lb://DEPARTMENTSERVICE
+        predicates:
+        - Path=/department/**
+        
+      - id: EMPLOYEESERVICE
+        uri: lb://EMPLOYEESERVICE
+        predicates:
+        - Path=/employee/**
